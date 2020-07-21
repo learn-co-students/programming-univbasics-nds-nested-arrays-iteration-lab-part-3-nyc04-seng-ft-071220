@@ -1,4 +1,12 @@
 def join_nested_strings(src)
-  # src will be an Array of Arrays of Strings and Integers
-  # Combine all Strings present in the AoA into a single value and return it
+  result_string=[]
+  src.length.times do |row_of_index|
+    src[row_of_index].length.times do |inner_array|
+      if src[row_of_index][inner_array].class == String
+         phrase=src[row_of_index][inner_array]
+         result_string<<phrase
+       end
+     end
+  end
+  p result_string.join(' ')
 end
